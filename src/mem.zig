@@ -12,6 +12,9 @@ pub fn main() !void {
 
 fn first_alloc(alloc: std.mem.Allocator) !void {
     const nums = try alloc.alloc(i32, 32);
+    for (0..32) |i| {
+        nums[i] = 1;
+    }
     defer alloc.free(nums);
 }
 

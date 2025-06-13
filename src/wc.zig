@@ -737,7 +737,7 @@ pub export fn counter(arg_file: [*c]u8) void {
     total_wcount +%= wcount;
     total_lcount +%= lcount;
 }
-pub export fn main(arg_argc: c_int, arg_argv: [*c][*c]u8) u8 {
+pub export fn main(arg_argc: c_int, arg_argv: [*c][*c]u8) c_int {
     var argc = arg_argc;
     _ = &argc;
     var argv = arg_argv;

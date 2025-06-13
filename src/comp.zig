@@ -1,10 +1,11 @@
 const std = @import("std");
 
 pub fn main() !void {
-    const fib_10 = comptime fibonacci(10);
-    std.debug.print("fibonacci(10) = {d}\n", .{fib_10});
-    const fib_20 = comptime fibonacci(20);
-    std.debug.print("fibonacci(20) = {d}\n", .{fib_20});
+    @setEvalBranchQuota(100_000);
+    const fib_a = comptime fibonacci(10);
+    std.debug.print("fibonacci(10) = {d}\n", .{fib_a});
+    const fib_b = comptime fibonacci(25);
+    std.debug.print("fibonacci(25) = {d}\n", .{fib_b});
 }
 
 pub fn fibonacci(n: i32) i32 {

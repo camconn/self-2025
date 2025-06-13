@@ -17,9 +17,8 @@ fn sum(n: usize) i64 {
 
 fn product(n: usize) i64 {
     var p: i64 = 1;
-    // will overflow
     for (1..n) |i| {
-        p = p * @as(i64, @intCast(i));
+        p *= @intCast(i);
     }
     return p;
 }

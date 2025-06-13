@@ -1,6 +1,6 @@
 const std = @import("std");
 
-const fib = @import("stack.zig");
+const fib = @import("fib.zig");
 
 test "fibonacci" {
     try std.testing.expectEqual(55, fib.fibonacci(10));

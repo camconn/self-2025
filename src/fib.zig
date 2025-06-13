@@ -1,10 +1,10 @@
 const std = @import("std");
 
 pub fn main() !void {
-    const fib_10 = fibonacci(10);
-    std.debug.print("fibonacci(10) = {d}\n", .{fib_10});
-    const fib_20 = fibonacci(20);
-    std.debug.print("fibonacci(20) = {d}\n", .{fib_20});
+    const fib_a = fibonacci(10);
+    std.debug.print("fibonacci(10) = {d}\n", .{fib_a});
+    const fib_b = fibonacci(30);
+    std.debug.print("fibonacci(30) = {d}\n", .{fib_b});
 }
 
 pub fn fibonacci(n: i32) i32 {
