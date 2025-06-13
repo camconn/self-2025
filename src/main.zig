@@ -4,13 +4,7 @@ pub fn main() !void {
     // printf debugging to stderr
     std.debug.print("All your {s} are belong to us.\n", .{"codebase"});
 
-    // Print to stdout, the correct way to write an application
-    const stdout_file = std.io.getStdOut().writer();
-    var bw = std.io.bufferedWriter(stdout_file);
-    const stdout = bw.writer();
-
-    try stdout.print("Hello, SELF 2025.", .{});
-    try bw.flush();
+    std.debug.print("Hello, SELF 2025.", .{});
 
     var gpa = std.heap.GeneralPurposeAllocator(.{}){};
     defer _ = gpa.deinit();
@@ -18,7 +12,7 @@ pub fn main() !void {
     const combined = try concat("Hello, ", "LinuxFest", alloc);
     {
         defer alloc.free(combined);
-        try stdout.print("{s}\n\n", .{combined});
+        std.debug.print("{s}\n\n", .{combined});
     }
 }
 
